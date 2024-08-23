@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="character-detail-main-content">
+        <section class="character-detail-container">
+            <div class="character-stats-container">
+                <h3>Stats</h3>
+                <ul>
+                    <li>Strength: {{ character.stats.strength }}</li>
+                    <li>Agility: {{ character.stats.agility }}</li>
+                    <li>Speed: {{ character.stats.speed }}</li>
+                    <li>Physical: {{ character.stats.physical }}</li>
+                </ul>
+
+            </div>
+            <div class="character-stuff-container">
+                <h3>Your Character</h3>
+                <p><strong>Name:</strong> {{ character.name }}</p>
+                <p><strong>Level:</strong> {{ character.level }}</p>
+                <p><strong>Health Points (HP):</strong> {{ character.stats.health }}</p>
+                <p><strong>Location:</strong> {{ location.name }}</p>
+            </div>
+            <div class="character-attribut-container">
+                <h3>Skills</h3>
+            <ul>
+                <li>Wooding: {{ character.general_skills.wooding }}</li>
+                <li>Mining: {{ character.general_skills.mining }}</li>
+                <li>Picking: {{ character.general_skills.picking }}</li>
+                <li>Searching: {{ character.general_skills.searching }}</li>
+            </ul>
+
+            </div>
+
+        </section>
+        <section class="trailer-detail-container">
+            <h2>Trailer Details</h2>
+            <p><strong>Trailer Name:</strong> {{ trailer.name }}</p>
+
+            <h3>Inventory (Capacity: {{ trailer.inventory.capacity }})</h3>
+            <ul>
+                {% for inventory_item in trailer.inventory.inventory_items.all %}
+                    <li>{{ inventory_item.quantity }} x {{ inventory_item.item.name }}</li>
+                {% empty %}
+                    <li>Inventory is empty.</li>
+                {% endfor %}
+            </ul>
+
+        </section>
+    </main>
+{% endblock content %}

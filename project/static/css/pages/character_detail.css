@@ -1,0 +1,42 @@
+/* Style pour la page character_detail.html */
+
+
+.character-detail-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+/* Partie gauche, Info du personnage */
+
+.character-detail-container {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+
+}
+
+.character-stats-container{
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+.character-stuff-container{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+
+}
+.character-attribut-container{
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.trailer-detail-container {
+    grid-column: 2;
+
+}
